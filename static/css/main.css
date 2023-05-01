@@ -1,0 +1,46 @@
+#title {
+  font-size: 50px;
+}
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+body .container {
+  margin: 0 auto;
+  max-width: 640px;
+  padding: 0 1em 1em;
+}
+#pixelColor {
+  border: solid 1px;
+  border-radius: 8px;
+  height: 150px;
+  width: 550px;
+}
+#colorbtn {
+  height: 40px;
+}
+
+#colorform {
+  align-content: start;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#empty_dummy {
+  border: none;
+  height: 200px;
+}
+#textform {
+  display: flex;
+}
+
+#textcheck {
+  width: 550px;
+  height: 40px;
+}
+
+#flex_dummy {
+  border: none;
+  width: 20px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='css/main.css')}}"
+  />
+  <title>CVPR 그림 맞추기 게임</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h3 id="title">그림 맞추기 게임</h3>
+    </header>
+    <hr />
+    <div id="picture"></div>
+
+    <form id="colorform" autocomplete="on" method="post" action="result">
+      <input type="color" id="pixelColor" name="rgb" />
+      <div id="flex_dummy"></div>
+      <input type="submit" id="colorbtn" value="색깔 입히기" />
+    </form>
+    <div id="empty_dummy"></div>
+
+    <form id="textform">
+      <input type="text" id="textcheck" />
+      <input type="submit" id="textbtn" value="정답 확인" />
+    </form>
+  </div>
+</body>
