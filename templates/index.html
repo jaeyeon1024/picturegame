@@ -12,9 +12,9 @@
       <h3 id="title">그림 맞추기 게임</h3>
     </header>
     <hr />
-    <div id="picture"></div>
+    <img src="{{url_for('static', filename= image_file)}}" width="512" />
 
-    <form id="colorform" autocomplete="on" method="post" action="result">
+    <form id="colorform" autocomplete="on" method="post" action="color">
       <input type="color" id="pixelColor" name="rgb" />
       <div id="flex_dummy"></div>
       <input type="submit" id="colorbtn" value="색깔 입히기" />
