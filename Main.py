@@ -3,8 +3,8 @@ import cv2
 import random
 import numpy as np
 
-row_size = 512 # 사각형 크기
-col_size = 512
+row_size = 256 # 사각형 크기
+col_size = 256
 window_size = 2 # 블러 크기
 error_range = 30 # 오차범위
 save_path = r"C:\Labs\picture_game\static\css\img\saves.jpg"
@@ -51,7 +51,7 @@ def check_pexels(img_data:list, rgb:list) -> bool:
     return check
 
 #픽셀 출력
-def print_pexels(img,background,rgb):
+def print_pexels(img,background,rgb,save_path=None):
     for i in range(img.shape[0]-1):
         for j in range(img.shape[1]-1):
             if check_pexels(list(img[i][j]),rgb):
@@ -60,7 +60,10 @@ def print_pexels(img,background,rgb):
     return 
 
 #
-def __create():
+def __create(image_path = None):
+    if image_path is not None:
+        update(image_path)
+    
     img = cv2.imread(__image_path)
     background = cv2.imread(r"static\css\img\white_background.jpg")
 
@@ -70,14 +73,16 @@ def __create():
     return [img, background]
 
 def update(path: str):
+    global __image_path
     if not os.path.exists(path):
         raise FileNotFoundError()
     if not os.path.isfile(path):
         raise RuntimeError(f"This is not file ({path})")
     __image_path = path
+    
 
-def create():
-    __instance = __create()
+def create(image_path = None):
+    __instance = __create(image_path)
     return __instance
 
 
